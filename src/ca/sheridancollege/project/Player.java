@@ -12,10 +12,11 @@ package ca.sheridancollege.project;
  * @author Paul Bonenfant Jan 2020
  * @author Megha Patel
  */
-public abstract class Player {
+public abstract class Player extends GroupOfCards{
 
     private String name; //the unique name for this player
-
+    private GroupOfCards hand;  //the unique hand for this player
+    
     /**
      * A constructor that allows you to set the player's unique ID
      *
@@ -46,5 +47,19 @@ public abstract class Player {
      * with logic to play your game.
      */
     public abstract void play();
+
+    /**
+     * @return the hand
+     */
+    public GroupOfCards getHand() {
+        return hand;
+    }
+
+    /**
+     * @param hand the hand to set
+     */
+    public void setHand(GroupOfCards hand) {
+        this.hand = hand;
+    }
 
 }
