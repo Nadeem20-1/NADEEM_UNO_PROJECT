@@ -16,10 +16,10 @@ import java.util.Collections;
  * @author Paul Bonenfant Jan 2020
  * @author Megha Patel
  */
-public class GroupOfCards {
+public class GroupOfCards extends Card{
 
     //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
+    private ArrayList<Card> cards = new ArrayList();
     private int size;//the size of the grouping
 
     public GroupOfCards(int size) {
@@ -34,7 +34,22 @@ public class GroupOfCards {
     public ArrayList<Card> getCards() {
         return cards;
     }
-
+    
+    public void drawCard(){
+        int num = (int)Math.round(Math.random()*9);
+        int colour = (int)Math.round(Math.random()*3);
+        String[] cardColours = getCardColours();
+        Card card = new UNOCard(num,cardColours[colour]);
+        cards.add(card);
+        size++;
+    }
+    
+    public void hidePrevHand(){
+        for(int i = 0;i<15;i++){
+            System.out.println();
+        }
+    }
+    
     public void shuffle() {
         Collections.shuffle(cards);
     }
@@ -51,6 +66,15 @@ public class GroupOfCards {
      */
     public void setSize(int size) {
         this.size = size;
+    }
+    
+    @Override
+    public String toString(){
+        String str = "";
+        for(Card card: cards){
+            str = str + card + " ";
+        }
+        return str;
     }
 
 }//end class
