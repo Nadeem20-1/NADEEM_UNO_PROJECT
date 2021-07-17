@@ -38,9 +38,17 @@ public class GroupOfCards extends Card{
     public void drawCard(){
         int num = (int)Math.round(Math.random()*9);
         int colour = (int)Math.round(Math.random()*3);
+        int special = (int)Math.round(Math.random()*2);
+        int chance = (int)Math.round(Math.random()*10+1);
         String[] cardColours = getCardColours();
-        Card card = new UNOCard(num,cardColours[colour]);
-        cards.add(card);
+        String[] specialCard = getSpecialCards();
+        if(chance == 1){
+            Card card = new UNOCard(num,cardColours[colour],specialCard[special]);
+            cards.add(card);
+        }else{
+            Card card = new UNOCard(num,cardColours[colour],specialCard[3]);
+            cards.add(card);
+        }
         size++;
     }
     
