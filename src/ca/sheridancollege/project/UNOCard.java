@@ -10,8 +10,8 @@ package ca.sheridancollege.project;
  * @author ukule
  */
 public class UNOCard extends Card{
-    public UNOCard(int number, String colour){
-        super(number, colour);
+    public UNOCard(int number, String colour, String special){
+        super(number, colour, special);
     }
 
     @Override
