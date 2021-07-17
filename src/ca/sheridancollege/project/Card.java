@@ -16,9 +16,11 @@ public abstract class Card {
     //default modifier for child classes
     private static final int[] cardNumbers = {0,1,2,3,4,5,6,7,8,9};
     private static final String[] cardColours = {"Red","Yellow","Green","Blue"};
+    private static final String[] specialCards = {"Plus-Two","Plus-Four","Skip","None"};
     
     private int number;
     private String colour;
+    private String special;
     /**
      * Students should implement this method for their specific children classes
      *
@@ -27,9 +29,10 @@ public abstract class Card {
     @Override
     public abstract String toString();
     
-    public Card(int number, String colour){
+    public Card(int number, String colour, String special){
         this.number = number;
         this.colour = colour;
+        this.special = special;
     }
     
     public String[] getCardColours(){
@@ -67,6 +70,27 @@ public abstract class Card {
      */
     public void setColour(String colour) {
         this.colour = colour;
+    }
+
+    /**
+     * @return the special
+     */
+    public String getSpecial() {
+        return special;
+    }
+
+    /**
+     * @param special the special to set
+     */
+    public void setSpecial(String special) {
+        this.special = special;
+    }
+
+    /**
+     * @return the specialCards
+     */
+    public static String[] getSpecialCards() {
+        return specialCards;
     }
 
 }
