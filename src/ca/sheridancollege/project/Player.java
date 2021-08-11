@@ -1,16 +1,13 @@
-/**
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package ca.sheridancollege.project;
 
 /**
- * A class that models each Player in the game. Players have an identifier, which should be unique.
  *
- * @author dancye
- * @author Paul Bonenfant Jan 2020
- * @author Megha Patel
+ * @author Nadeem Rashid
  */
 public abstract class Player extends GroupOfCards{
 
@@ -46,7 +43,7 @@ public abstract class Player extends GroupOfCards{
      * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
      * with logic to play your game.
      */
-    public abstract void play();
+    public abstract void play(MiddleDeck middleCard);
 
     /**
      * @return the hand
