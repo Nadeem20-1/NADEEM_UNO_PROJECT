@@ -1,10 +1,14 @@
-/**
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package ca.sheridancollege.project;
 
+/**
+ *
+ * @author Nadeem Rashid
+ */
 import java.util.ArrayList;
 
 /**
@@ -17,21 +21,11 @@ import java.util.ArrayList;
  */
 public abstract class Game {
 
-    private final String name;//the title of the game
     private ArrayList<Player> players;// the players of the game
-
-    public Game(String name) {
-        this.name = name;
+    
+    public Game() {
         players = new ArrayList();
     }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
     /**
      * @return the players of this game
      */
@@ -53,7 +47,8 @@ public abstract class Game {
 
     /**
      * When the game is over, use this method to declare and display a winning player.
+     * @param p
      */
-    public abstract void declareWinner();
+    public abstract void declareWinner(Player p);
 
 }//end class
