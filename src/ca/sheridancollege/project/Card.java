@@ -1,20 +1,17 @@
-/**
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package ca.sheridancollege.project;
 
 /**
- * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
- * game. Students wishing to add to the code should remember to add themselves as a modifier.
  *
- * @author dancye
- * @author Megha Patel
+ * @author Nadeem Rashid
  */
 public abstract class Card {
-    //default modifier for child classes
-    private static final int[] cardNumbers = {0,1,2,3,4,5,6,7,8,9};
+    //These variables will hold the values of the numbers, colours, and special
+    private static final int[] cardNumbers = {1,2,3,4,5,6,7,8,9};
     private static final String[] cardColours = {"Red","Yellow","Green","Blue"};
     private static final String[] specialCards = {"Plus-Two","Plus-Four","Skip","None"};
     
@@ -29,6 +26,15 @@ public abstract class Card {
     @Override
     public abstract String toString();
     
+    public Card(){
+        
+    }
+    //This method will create a new special card, with no number
+    public Card(String colour, String special){
+        this.colour = colour;
+        this.special = special;
+    }
+    //This method will create a new regular card
     public Card(int number, String colour, String special){
         this.number = number;
         this.colour = colour;
@@ -41,6 +47,13 @@ public abstract class Card {
     
     public int[] getCardNumbers(){
         return cardNumbers;
+    }
+    
+    /**
+     * @return the specialCards
+     */
+    public String[] getSpecialCards() {
+        return specialCards;
     }
     
     /**
@@ -85,12 +98,4 @@ public abstract class Card {
     public void setSpecial(String special) {
         this.special = special;
     }
-
-    /**
-     * @return the specialCards
-     */
-    public static String[] getSpecialCards() {
-        return specialCards;
-    }
-
 }
